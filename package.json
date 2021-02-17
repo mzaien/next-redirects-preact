@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mzaien/next-redirects/tree/main/packages/next-redirects-preact"
+    "url": "git+https://github.com/Mzaien/next-redirects-preact"
   },
   "keywords": [
     "next",
@@ -35,14 +35,13 @@
   "author": "Abdullah Mzaien <awmzaien@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Mzaien/next-redirects/issues"
+    "url": "https://github.com/Mzaien/next-redirects-preact/issues"
   },
   "peerDependencies": {
     "next": ">= 9.3.6",
     "preact": ">= 10.5.12",
     "react": ">= 16.8.0"
   },
-  "gitHead": "7ae4a9733f6c5716ad8efd999f58f52f9b87c9bc",
   "devDependencies": {
     "next": "^10.0.7",
     "preact": "^10.5.12",
