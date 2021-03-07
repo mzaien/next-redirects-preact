@@ -44,7 +44,8 @@
     "react": ">= 16.8.0"
   },
   "devDependencies": {
-    "next": "^10.0.8-canary.8",
+    "@types/react": "^17.0.2",
+    "next": "^10.0.8",
     "preact": "^10.5.12",
     "react": "^17.0.1"
   }
