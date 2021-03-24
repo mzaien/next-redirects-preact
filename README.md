@@ -1,6 +1,4 @@
-# Next-Redirects-preact
-
-Next-Redirects-preact is a small Redirect utility component for Next.js that has the ability to give fallback links for different conditions and with a small package size,that support Preact
+# Next-Redirects-Preact
 
 <p align="center">
   <a href="https://www.npmjs.org/package/next-redirects-preact">
@@ -11,22 +9,48 @@ Next-Redirects-preact is a small Redirect utility component for Next.js that has
   </a>
 </p>
 
-## How to install :
+Next-Redirects-Preact is a small Redirect utility component for Next.js that can give fallback links for different conditions and with a small package size
+
+- [Next-Redirects-Preact](#next-redirects-preact)
+  - [Features](#features)
+  - [How to install](#how-to-install)
+  - [How to use](#how-to-use)
+
+## Features
+
+- 💡 Rich api options
+- 🔥 Small and Fast
+- 🛠 Fully supports esm
+
+## How to install
 
 ```zsh
-#using yarn
-yarn add Next-Redirects-preact
-#using npm
-npm i Next-Redirects-preact
+  #using yarn
+  yarn add Next-Redirects-Preact
+  #using npm
+  npm i Next-Redirects-Preact
 ```
 
 ## How to use
 
-There is one component that can be used from the library , it can be used in two and hald ways
+There is one component that can be used, it can be used in more than one way
 
-**V2.X.X**
+You can use all these props with `<Redirects>` component
 
--1 If you have a switch or more than condition
+| Prop     |                                                                usage                                                                | type                                                     |
+| :------- | :---------------------------------------------------------------------------------------------------------------------------------: | -------------------------------------------------------- |
+| href     |                                                  The link you want to redirect to                                                   | String                                                   |
+| status   |                                             The boolean that decides to redirect or not                                             | boolean                                                  |
+| fallBack |                                       (optional) The Fallback link if the condition is false                                        | String                                                   |
+| asPath   |                           (optional) The path mask if you want to show a different url than the real one                            | string                                                   |
+| shallow  |            (optional) The shallow option in next router for [more info](https://nextjs.org/docs/routing/shallow-routing)            | boolean                                                  |
+| query    | (optional) This props gives you the ability to send data with the direct you can access it via router.query.state on the other page | String, Number, Boolean as an array or as a single value |
+
+```tsx
+<Redirects href="/main" status={auth.loggedin} />
+```
+
+If you have a switch or more than the status
 
 ```tsx
 if (user.loggedin) {
@@ -44,48 +68,4 @@ switch (condistionX) {
 }
 ```
 
--2 Using Next-Redirects component directry
-
-```tsx
-<Redirects href="/main" status={auth.loggedin} />
-```
-
--2.5 you can also use it with a fallback link 😆
-
-```tsx
-<Redirects href="/main" status={auth.loggedin} fallback="/login" />
-```
-
-**V2.0.x**
-
--1 If you have a switch or more than condition
-
-```tsx
-if (user.loggedin) {
-  <NextRedirects href="/Dashboard" />;
-}
-switch (condistionX) {
-  case admin:
-    <NextRedirects href="/Dashboard" />;
-    break;
-  case anonymous:
-    <NextRedirects href="/Login" />;
-    break;
-  default:
-    <NextRedirects href="/main" />;
-}
-```
-
--2 Using Next-Redirects component directry
-
-```tsx
-<NextRedirects href="/main" condition={auth.loggedin} />
-```
-
--2.5 you can also use it with a fallback link 😆
-
-```tsx
-<NextRedirects href="/main" condition={auth.loggedin} fallback="/login" />
-```
-
-this is just and example you can use it for whatever usecases you can imagine 🛠
+This is just an example you can use it for whatever use cases you can imagine 🛠
