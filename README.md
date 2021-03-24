@@ -46,6 +46,8 @@ You can use all these props with `<Redirects>` component
 | shallow  |            (optional) The shallow option in next router for [more info](https://nextjs.org/docs/routing/shallow-routing)            | boolean                                                  |
 | query    | (optional) This props gives you the ability to send data with the direct you can access it via router.query.state on the other page | String, Number, Boolean as an array or as a single value |
 
+example :
+
 ```tsx
 <Redirects href="/main" status={auth.loggedin} />
 ```
