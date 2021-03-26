@@ -11,11 +11,6 @@
 
 Next-Redirects-Preact is a small Redirect utility component for Next.js that can give fallback links for different conditions and with a small package size
 
-- [Next-Redirects-Preact](#next-redirects-preact)
-  - [Features](#features)
-  - [How to install](#how-to-install)
-  - [How to use](#how-to-use)
-
 ## Features
 
 - 💡 Rich api options
