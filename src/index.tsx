@@ -27,7 +27,6 @@ export function Redirects({
   query,
 }: nextRedirectsprop) {
   const router = useRouter();
-  status !== undefined && status === true;
   useEffect(() => {
     if (typeof window !== "undefined") {
       status !== undefined
