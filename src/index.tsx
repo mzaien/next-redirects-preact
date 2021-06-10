@@ -32,16 +32,12 @@ export function Redirects({
       status !== undefined
         ? (router.prefetch(status === true ? href : `${fallBack}`),
           router.push(
-            {
-              pathname:
-                status === true ? href : fallBack ? fallBack : router.asPath,
-              query: { state: query },
-            },
+            status === true ? href : fallBack ? fallBack : router.asPath,
             asPath,
             { shallow: shallow !== undefined ? shallow : false }
           ))
         : (router.prefetch(href),
-          router.push({ pathname: href, query: { state: query } }, asPath, {
+          router.push(href, asPath, {
             shallow: shallow !== undefined ? shallow : false,
           }));
     }
