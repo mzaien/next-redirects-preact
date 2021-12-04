@@ -1,6 +1,6 @@
 import { useEffect } from "preact/hooks";
 import { useRouter } from "next/router";
-
+import { NextResponse, NextRequest } from "next/server";
 export interface nextRedirectsprop {
   href: string;
   asPath?: string;
@@ -8,6 +8,11 @@ export interface nextRedirectsprop {
   condition?: boolean;
   shallow?: boolean;
 }
+export type serverRedirectProps = {
+  req: NextRequest;
+  condition: string;
+  url: string;
+};
 
 export function Redirects({
   href,
@@ -33,4 +38,10 @@ export function Redirects({
     }
   }, [condition]);
   return null;
+}
+export function serverRedirect({ condition, url }: serverRedirectProps) {
+  if (!condition) {
+    return NextResponse.rewrite(url);
+  }
+  return NextResponse.next();
 }
