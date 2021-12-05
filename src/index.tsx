@@ -8,11 +8,6 @@ export interface nextRedirectsprop {
   condition?: boolean;
   shallow?: boolean;
 }
-export type serverRedirectProps = {
-  req: NextRequest;
-  condition: string;
-  url: string;
-};
 
 export function Redirects({
   href,
@@ -39,8 +34,8 @@ export function Redirects({
   }, [condition]);
   return null;
 }
-export function serverRedirect({ condition, url }: serverRedirectProps) {
-  if (!condition) {
+export function serverRedirect(condition: boolean, url: string) {
+  if (condition) {
     return NextResponse.rewrite(url);
   }
   return NextResponse.next();
